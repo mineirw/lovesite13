@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Love site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #entrada, #mensagem {
+      margin-top: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 150px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Love site</h1>
+  <p>Data do nosso primeiro sim</p>
+
+  <div id="entrada">
+    <input type="text" id="senha" placeholder="Digite a senha" />
+    <button onclick="verificarSenha()">Entrar</button>
+  </div>
+
+  <div id="mensagem"></div>
+
+  <script>
+    function verificarSenha() {
+      const senhaCorreta = "130924";
+      const senhaDigitada = document.getElementById("senha").value.trim();
+      const mensagem = document.getElementById("mensagem");
+
+      if (senhaDigitada === senhaCorreta) {
+        mensagem.innerHTML = "<p style='color: green;'>✅ Acesso liberado! Bem-vindo ao site.</p>";
+        // Aqui pode redirecionar, ex: window.location.href = "pagina.html";
+      } else {
+        mensagem.innerHTML = "<p style='color: red;'>❌ Senha incorreta. Tente novamente!</p>";
+      }
+    }
+  </script>
+</body>
+</html>
